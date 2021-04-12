@@ -1,0 +1,37 @@
+
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+        <mat-nav-list>
+            <mat-list-item>
+                <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpandable = !isExpandable" [ngClass]="{'rotated': isExpandable}">chevron_right</mat-icon>
+            </mat-list-item>
+            <mat-list-item routerLink="">
+                <mat-icon mat-list-icon>home</mat-icon>
+                <span *ngIf="isExpandable">Dashboard</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/info">
+                <mat-icon mat-list-icon >important_devices</mat-icon>
+                <span *ngIf="isExpandable">Info</span>
+            </mat-list-item>
+            <mat-list-item routerLink="/user">
+                <mat-icon mat-list-icon>supervisor_account</mat-icon>
+                <span *ngIf="isExpandable">User</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <div class="content">
+        <mat-toolbar style="background-color: #dd5006;">
+            <mat-toolbar style="background-color: #dd5006;">
+               <span>My App</span>
+               <span class="example-spacer"></span>
+               <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                 <mat-icon>favorite</mat-icon>
+               </button>
+               <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>share</mat-icon>
+              </button>
+             </mat-toolbar>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
