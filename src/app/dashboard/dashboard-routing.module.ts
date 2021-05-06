@@ -3,29 +3,36 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { InfoComponent } from './components/info/info.component';
-import { UserComponent } from './components/user/user.component';
+import { RouteGuardGuard } from '../service/route-guard.guard';
+import { SmsComponent } from './components/sms/sms.component';
+import { EmailComponent } from './components/email/email.component';
+import { HistoryComponent } from './components/history/history.component';
 
 const routes :Routes = [
  {
      path:'',
      component:WrapperComponent,
+     canActivate:[RouteGuardGuard],
      children:[
        {
-         path:'dashboard',
-         component:DashboardComponent
+         path:'sms',
+         component:SmsComponent,
        },
        {
-        path:'info',
-        component:InfoComponent
+        path:'dashboard',
+        component:DashboardComponent
       },
       {
-        path:'user',
-        component:UserComponent
+        path:'email',
+        component:EmailComponent
+      },
+      {
+        path:'history',
+        component:HistoryComponent
       },
       {
         path:'**',
-        redirectTo:'/dashboard',
+        redirectTo:'/dash/sms',
         pathMatch:'full'
       }
      ]

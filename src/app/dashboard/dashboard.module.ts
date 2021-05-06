@@ -15,11 +15,20 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { SmsComponent } from './components/sms/sms.component';
+import { EmailComponent } from './components/email/email.component';
+import { HistoryComponent } from './components/history/history.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AlertComponent } from './components/alert/alert.component';
 
 
 
 @NgModule({
-  declarations: [WrapperComponent,InfoComponent,UserComponent,DashboardComponent],
+  declarations: [WrapperComponent,InfoComponent,UserComponent,DashboardComponent, SmsComponent, EmailComponent, HistoryComponent, AlertComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -32,7 +41,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatGridListModule,
     MatTableModule,
     MatPaginatorModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTabsModule,
+    MatInputModule,
+    AngularFileUploaderModule,
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class DashboardModule { }

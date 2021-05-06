@@ -1,0 +1,52 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="SMS">
+    <div id="signin">
+      <div class="form-title">
+        <h1>Send SMS</h1>
+      </div>
+      <form>
+        <div class="example-container">
+          <mat-label>Upload Contants list</mat-label>
+          <input type="file" (change)="excelread($event)" placeholder="pat@example.com" required>
+        </div>
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your Message</mat-label>
+            <textarea matInput  [(ngModel)]="broacast.message" name="password" required></textarea>
+            <mat-error></mat-error>
+          </mat-form-field>
+        </div>
+        <button type="button" (click)="sendSms()" class="login" >Send Sms</button>
+    </form>
+  </div>
+  </mat-tab>
+  <mat-tab label="Email">
+    <div id="signin">
+      <div class="form-title">
+        <h1>Send Email</h1>
+      </div>
+      <form>
+        <div class="example-container">
+          <mat-label>Upload Contants list</mat-label>
+          <input (change)="excelread($event)" type="file" placeholder="pat@example.com" required>
+        </div>
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Email Subject</mat-label>
+            <input matInput [(ngModel)]="email.subject" name="subject" placeholder=""/>
+            <mat-error></mat-error>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Paste Html</mat-label>
+            <textarea matInput [(ngModel)]="email.email" name="email" placeholder=""></textarea>
+            <mat-error></mat-error>
+          </mat-form-field>
+        </div>
+        <button type="button" (click)="openDialog()" class="login" >Send Email</button>
+    </form>
+  </div>
+  </mat-tab>
+
+</mat-tab-group>
